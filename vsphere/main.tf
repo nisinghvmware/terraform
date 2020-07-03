@@ -3,6 +3,10 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
+variable "vm_name" {
+  default = "vmware-gadagip-test"
+}
+
 data "vsphere_datacenter" "dc" {
   name = "ESO_PKS_VC01_DC01"
 }
@@ -28,7 +32,7 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "cloned_virtual_machine" {
-  name             = "terraform-test-gadagip"
+  name             = "${var.vm_name}"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
 
