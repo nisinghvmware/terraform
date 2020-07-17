@@ -2,7 +2,7 @@ provider "google" {
 #  credentials = file("account.json")
   project     = "abx-service-for-tango"
   region      = "us-east1"
-  zone        = "us-east1-a"
+  zone        = "us-east1-b"
 }
 
 variable "prefix" {
