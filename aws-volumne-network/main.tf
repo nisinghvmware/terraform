@@ -1,7 +1,5 @@
 provider "aws" {
     region="us-east-1"
-    access_key = "AKIAJ7LYZ732FOJUCR2Q"
-    secret_key = "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"
 }
 
 variable "instance_type" {
