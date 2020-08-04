@@ -29,8 +29,7 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "main" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
-
+  cidr_block = "10.0.0.0/24"
   tags = {
     Name = "Main"
   }
@@ -63,7 +62,7 @@ resource "aws_security_group" "allow_tls" {
 
 resource "aws_network_interface" "test" {
   subnet_id       = aws_subnet.main.id
-  private_ips     = ["10.0.0.50"]
+  private_ips     = ["10.0.0.15"]
   security_groups = [aws_security_group.allow_tls.id]
 
   attachment {
