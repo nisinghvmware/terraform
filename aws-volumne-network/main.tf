@@ -64,6 +64,7 @@ resource "aws_network_interface" "test" {
   subnet_id       = aws_subnet.main.id
   private_ips     = ["10.0.0.15"]
   security_groups = [aws_security_group.allow_tls.id]
+  availability_zone = "us-east-1a"
 
   attachment {
     instance     = aws_instance.machine1.id
